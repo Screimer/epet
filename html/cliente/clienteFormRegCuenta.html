@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Registro</title>
+  <link rel="stylesheet" type="text/css" href="../../css/Cliente/clienteFormRegCuenta.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1> e-pet </h1>
+      <div class=menuUbicacion>
+      </div>
+    </div>
+  </div>
+  <hr class="lineaVerticalAbajo" width="100%">
+  <h1 class="tituloRegistro"> Creá una cuenta cliente </h1>
+  <div class="formulario wrapper">
+    <form id="form">
+      <div class="primeraSeccion">
+        <p>Nombre: <br><input type="text" onkeypress="return soloLetras(event)" id="nombreC" name="nombreC" class="caja"
+            onkeyup="validacionCampoNombre()"></p>
+        <h5 class="warnings" id="warningNombre"></h5>
+        <p>Primer Apellido: <br><input type="text" onkeyup="validacionCampoApellidoUno()"
+            onkeypress="return soloLetras(event)" name="PrimerApellido" id="primerApellido" class="caja"></p>
+        <h5 class="warnings" id="warningPrimerApellido"></h5>
+        <p>Segundo Apellido: <br><input type="text" onkeypress="return soloLetras(event)" name="segundoApellido"
+            id="segundoApellido" class="caja" onkeyup="validacionCampoApellidoDos()"></p>
+        <h5 class="warnings" id="warningSegundoApellido"></h5>
+        <p>Correo electrónico: <br><input type="email" name="email" id="email" class="caja" onkeyup="validarEmail()">
+        </p>
+        <h5 class="warnings" id="warningCorreoElectronico"></h5>
+
+      </div>
+      <div class="segundaSeccion">
+        <p> Genero: <br>
+          <select name="genero" id="genero" class="caja" onchange="validacionSelectGenero()">
+            <option value="0"></option>
+            <option value="1"> Masculino</option>
+            <option value="2">Femenino</option>
+          </select>
+        <h5 class="warnings" id="warningGenero"></h5>
+        <p> Tipo de identificación: <br>
+          <select name="tipoId" id="tipoId" class="caja" onchange="validacionSelectTipo()">
+            <option value="0"></option>
+            <option value="1"> Dimex</option>
+            <option value="2">Cédula Nacional</option>
+          </select>
+        <h5 class="warnings" id="warningTipoIdentificacion"></h5>
+        <p>
+          Número de identificación : <br><input id="numeroIdentificacion" type="text" name="identificacion" class="caja"
+            onkeyup="validacionCampoNumIden() "
+            onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+        </p>
+        <h5 class="warnings" id="warningNumeroIdentificacion"></h5>
+        <p>
+          Fecha de cumpleaños : <br><input type="date" id="fechaCumple" class="caja" onchange="validacionCampoFecha() ">
+        </p>
+        <h5 class="warnings" id="warningFecha"></h5>
+      </div>
+      <div class="terceraSeccion ">
+        <p>Dirección (provincia-cantón): <br><input id="direccionExacta" type="text" name="direccionExacta" class="caja"
+            onkeyup="validacionCampoDireccion() "></p>
+        <h5 class="warnings" id="warningDireccionExacta"></h5>
+        <p>Número de teléfono : <br><input id="numeroTelefono" type="text" name="numeroTelefono" class="caja"
+            onkeyup="validacionCampoNumTel()"
+            onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></p>
+        <h5 class="warnings" id="warningNumeroTelefono"></h5>
+        <label for="imagen"class="botonSubirFoto"> <div class="textoBoton">Subir foto de perfil</div></label> <br>
+        <input type="file" name="imagen" accept="image/*" id="imagen" style="display:none"/>
+        <h5 class="warnings-imagen" id="warning-imagen"></h5>
+        <br>
+        <div class="lado ladoTexto" onclick="validacionFormulario()">Seguir con el registro</div>
+        <h5 class="warnings" id="warningDuplicado"></h5>
+      </div>
+    </form>
+  </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="footer-content">
+
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p class="tipo">
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h1><span>S</span>íguenos</h1>
+        <div class="socials">
+          <a href="#"> <img src="../../imgs/iconosYLogo/facebook.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/instagram.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/twitter.png"></a>
+          <a href="#"> <img src="../../imgs/iconosYLogo/youtube.png"></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <h1><span>C</span>ontáctenos</h1>
+        <form action="index.html" method="post">
+          <input type="email" name="email" class="text-input contact-input" placeholder="Correo">
+          <textarea name="message" class="text-input contact-input" placeholder="¿Cuál es su duda?"></textarea>
+          <br>
+          <button type="submit" class="btn btn-big contact-btn"><i class="fas fa-envelope"></i> Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom tipo">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <script src=../../javaScript/ClienteClienteMascota.js></script>
+  <script>
+    const nombre = document.getElementById("nombreC");
+    const email = document.getElementById("email");
+    const primerApellido = document.getElementById("primerApellido");
+    const segundoApellido = document.getElementById("segundoApellido");
+    const form = document.getElementById("form");
+    const fecha = document.getElementById("fechaCumple");
+
+    const tipo = document.getElementById("tipoId");
+    const genero = document.getElementById("genero");
+    const direccionExacta = document.getElementById("direccionExacta");
+    const numeroTelefono = document.getElementById("numeroTelefono");
+    const numeroIdentificacion = document.getElementById("numeroIdentificacion");
+    const imagen = document.getElementById("imagen");
+   
+
+    /*Creamos variables y les asignamos el valor id de cada parrafo warning*/
+    const advNombre = document.getElementById("warningNombre");
+    const advPrimerApellido = document.getElementById("warningPrimerApellido");
+    const advSegundoApellido = document.getElementById("warningSegundoApellido");
+    const advCorreoElectronico = document.getElementById("warningCorreoElectronico");
+    const advGenero = document.getElementById("warningGenero");
+    const advTipo = document.getElementById("warningTipoIdentificacion");
+    const advNumeroIdentificacion = document.getElementById("warningNumeroIdentificacion");
+    const advDireccionExacta = document.getElementById("warningDireccionExacta");
+    const advNumeroTelefono = document.getElementById("warningNumeroTelefono");
+    const advFecha = document.getElementById("warningFecha");
+    const advertenciaImagen = document.getElementById("warning-imagen");
+
+    
+    function  validacionCampoNombre() {
+      var alertaNombre = ""
+
+      if (nombre.value.length == 0) {
+        alertaNombre = `Por favor digite su nombre.`
+        advNombre.innerHTML = alertaNombre
+        nombre.classList.remove("caja");
+        nombre.classList.add("caja-roja");
+        return false;
+      } else {
+        advNombre.innerHTML = ""
+        nombre.classList.remove("caja-roja");
+        nombre.classList.add("caja");
+        return true;
+      }
+    }
+    function validacionCampoApellidoUno() {
+      var alertaNombre = ""
+
+      if (primerApellido.value.length == 0) {
+        alertaNombre = `Por favor escriba su primer apellido.`
+        advPrimerApellido.innerHTML = alertaNombre
+        primerApellido.classList.remove("caja");
+        primerApellido.classList.add("caja-roja");
+        return false;
+      } else {
+        advPrimerApellido.innerHTML = ""
+        primerApellido.classList.remove("caja-roja");
+        primerApellido.classList.add("caja");
+        return true;
+      }
+    }
+    function validacionCampoApellidoDos() {
+      var alertaNombre = ""
+
+      if (segundoApellido.value.length == 0) {
+        alertaNombre = `Por favor escriba su segundo apellido.`
+        advSegundoApellido.innerHTML = alertaNombre
+        segundoApellido.classList.remove("caja");
+        segundoApellido.classList.add("caja-roja");
+        return false;
+      } else {
+        advSegundoApellido.innerHTML = ""
+        segundoApellido.classList.remove("caja-roja");
+        segundoApellido.classList.add("caja");
+        return true;
+      }
+    }
+    function validarEmail() {
+      var alerta = "";
+      if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(email.value)) {
+        advCorreoElectronico.innerHTML = ""
+        email.classList.remove("caja-roja");
+        email.classList.add("caja");
+        return true;
+      } else {
+        alerta = `Por favor escriba un correo válido.`
+        advCorreoElectronico.innerHTML = alerta
+        email.classList.remove("caja");
+        email.classList.add("caja-roja");
+        return false;
+      }
+    }
+
+    function validacionSelectGenero() {
+      var alertaGenero = "";
+
+      if (genero.value <= 0) {
+        alertaGenero = `Por favor seleccione el género.`
+        advGenero.innerHTML = alertaGenero
+        genero.classList.remove("caja");
+        genero.classList.add("caja-roja");
+        return false;
+
+      } else {
+        advGenero.innerHTML = ""
+        genero.classList.remove("caja-roja");
+        genero.classList.add("caja");
+        return true;
+      }
+
+    }
+    function validacionSelectTipo() {
+      var alertaTipo = "";
+
+      if (tipo.value <= 0) {
+        alertaTipo = `Por favor seleccione tipo de identificación.`
+        advTipo.innerHTML = alertaTipo
+        tipo.classList.remove("caja");
+        tipo.classList.add("caja-roja");
+        return false;
+      } else {
+        advTipo.innerHTML = ""
+        tipo.classList.remove("caja-roja");
+        tipo.classList.add("caja");
+        return true;
+      }
+    }
+    function validacionCampoNumIden() {
+      var alertaNombre = ""
+      if (numeroIdentificacion.value==0){ 
+      alertaNombre = `Por favor digite un número de identificación válido.`
+          advNumeroIdentificacion.innerHTML = alertaNombre
+          numeroIdentificacion.classList.remove("caja");
+          numeroIdentificacion.classList.add("caja-roja");
+        } else {
+          advNumeroIdentificacion.innerHTML = ""
+          numeroIdentificacion.classList.remove("caja-roja");
+          numeroIdentificacion.classList.add("caja");
+      if (tipo.value == 2) {
+        if (numeroIdentificacion.value.length != 9) {
+          alertaNombre = `Por favor digite un número de identificación válido.`
+          advNumeroIdentificacion.innerHTML = alertaNombre
+          numeroIdentificacion.classList.remove("caja");
+          numeroIdentificacion.classList.add("caja-roja");
+          return false;
+        } else {
+          advNumeroIdentificacion.innerHTML = ""
+          numeroIdentificacion.classList.remove("caja-roja");
+          numeroIdentificacion.classList.add("caja");
+          return true;
+        }
+      } else if (tipo.value == 1) {
+        if (numeroIdentificacion.value.length != 12) {
+          alertaNombre = `Por favor digite un número de identificación válido.`
+          advNumeroIdentificacion.innerHTML = alertaNombre
+          numeroIdentificacion.classList.remove("caja");
+          numeroIdentificacion.classList.add("caja-roja");
+          return false;
+        } else {
+          advNumeroIdentificacion.innerHTML = ""
+          numeroIdentificacion.classList.remove("caja-roja");
+          numeroIdentificacion.classList.add("caja");
+          return true;
+        }
+      }
+    }
+  }
+    function validacionCampoDireccion() {
+      var alertaNombre = ""
+
+      if (direccionExacta.value.length <= 5) {
+        alertaNombre = `Por favor digite la dirección.`
+        advDireccionExacta.innerHTML = alertaNombre
+        direccionExacta.classList.remove("caja");
+        direccionExacta.classList.add("caja-roja");
+        return false;
+      } else {
+        advDireccionExacta.innerHTML = ""
+        direccionExacta.classList.remove("caja-roja");
+        direccionExacta.classList.add("caja");
+        return true;
+      }
+    }
+    function validacionCampoNumTel() {
+      var alertaNombre = ""
+
+      if (numeroTelefono.value.length != 8) {
+        alertaNombre = `Por favor digite un número de teléfono válido.`
+        advNumeroTelefono.innerHTML = alertaNombre
+        numeroTelefono.classList.remove("caja");
+        numeroTelefono.classList.add("caja-roja");
+        return false;
+      } else {
+        advNumeroTelefono.innerHTML = ""
+        numeroTelefono.classList.remove("caja-roja");
+        numeroTelefono.classList.add("caja");
+        return true;
+      }
+    }
+    function validacionCampoFecha() {
+      var alertaFechaCam = "";
+      fechaV = 0;
+      if (fecha.value.length == 0) {
+        alertaFechaCam = `Por favor ingrese una fecha.`
+        advFecha.innerHTML = alertaFechaCam
+        fecha.classList.remove("caja");
+        fecha.classList.add("caja-roja");
+        return false;
+      } else {
+        advFecha.innerHTML = ""
+        fecha.classList.remove("caja-roja");
+        fecha.classList.add("caja");
+        return true;
+      }
+    }
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+        especiales = [8, 37, 39, 46, "@"],
+        tecla_especial = false;
+
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+    
+    function validacionSubirImagen() {
+      let warningImagen = ""
+
+      console.log(this.files);
+      if (this.files && this.files[0]) {  
+        imageFile = this.files[0];
+      }
+      if (imagen.value == "") {
+        warningImagen = "Por favor seleccione una imagen."
+        advertenciaImagen.innerHTML = warningImagen
+        return false;
+      } else {
+        advertenciaImagen.innerHTML = ""
+        return true;
+      }
+        
+    }
+document.getElementById("imagen").addEventListener("change",validacionSubirImagen)
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Reportes</title>
+        <script src="https://kit.fontawesome.com/ed860d5f36.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/administrador/adminListar.css"/><link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+    </head>
+    <body>
+<!--Empieza header-->
+         <div class="menu wrapper">
+            <div class="menu-izq">
+            <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+            </div>
+            <div class="menu-centro">
+                <h1> e-pets </h1>
+                <div class="menuUbicacion">
+                    <a href="adminHome.html">Home</a>
+                  <a href="adminListProv.html" class="leftborder">Proveedores</a>
+                  <a href="adminListClient.html" class="leftborder">Clientes</a>
+                  <a href="adminListRazPadVac.html" class="leftborder">Mascotas</a>
+                  <a href="adminListProd.html" class="leftborder">Productos</a>
+                  <a href="adminListServ.html" class="leftborder">Servicios</a>
+                  <a href="adminListCate.html" class="leftborder">Categorias</a>
+                  <a href="adminListReportes.html" class="leftborder" style="color:darkgrey">Reportes</a>
+                </div>
+            </div>
+        </div>
+        <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+        <hr class="lineaVerticalAbajo" width="100%">
+        <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+<!--Termina header-->
+<!--Empieza body-->
+        <div class="wrapper encabezado">
+            <div class="estatus">
+                <select placeholder="Escoger estatus" name="estatus" required class="caja">
+                    <option value="0">  </option>
+                    <option value="1"> Resuelto </option>
+                    <option value="2"> No resuelto</option>
+                    <option value="3"> Todos </option>
+                </select>
+                <div class="searchbar"><input type="search" name="input" placeholder="Buscar" autofocus required></div>
+            </div>
+            <div class="tituloPubli1">
+                <h1>Reportes</h1>
+            </div>
+        </div>
+        <div class="wrapper">
+            <table class="tabla">
+                <tr class="titulos">
+                    <td> Nombre <br> reportante</td>
+                    <td> Identificación <br> reportante</td>
+                    <td> Proveedor <br> reportado </td>
+                    <td> Identificación <br> reportado</td>
+                    <td> Fecha </td>
+                    <td> Hora </td>
+                    <td> Descripción </td>
+                    <td> Pruebas </td>
+                    <td> Estado </td>
+                    <td> Editar </td>
+                </tr>
+                <tr class="publicidad1">
+                    <td> Pablo Garcia </td>
+                    <td> 201450791 </td>
+                    <td> Carlos Alvarado </td>
+                    <td> 107420924 </td>
+                    <td> 21 de febrero </td>
+                    <td> 23:45 </td>
+                    <td> Mal trato </td>
+                    <td><a href="">Archivo <br> adjunto </a> </td>
+                    <td> <label class="switch"><input type="checkbox"><span class="slider round"></span></label></td>
+                    <td> <i class="fas fa-edit"></i> </td>
+                </tr>
+                <tr class="publicidad1">
+                    <td> Juan Perez </td>
+                    <td> 523230631 </td>
+                    <td> Hernan Gonzalez </td>
+                    <td> 409877284 </td>
+                    <td> 28 de febrero </td>
+                    <td> 10:25 </td>
+                    <td> Estafa </td>
+                    <td><a href="">Archivo <br> adjunto </a> </td>
+                    <td> <label class="switch"><input type="checkbox"><span class="slider round"></span></label></td>
+                    <td> <i class="fas fa-edit"></i> </td>
+                </tr>
+                <tr class="publicidad1">
+                    <td> Diego Aguilar </td>
+                    <td> 307826491 </td>
+                    <td> Julio Campos </td>
+                    <td> 208728749 </td>
+                    <td> 3 de enero </td>
+                    <td> 09:49 </td>
+                    <td> Producto en mal estado </td>
+                    <td><a href="">Archivo <br> adjunto </a> </td>
+                    <td> <label class="switch"><input type="checkbox"><span class="slider round"></span></label></td>
+                    <td> <i class="fas fa-edit"></i> </td>
+                </tr>
+                <tr class="publicidad1">
+                    <td> Pedro Arce </td>
+                    <td> 708772748 </td>
+                    <td> Arturo Arguedas </td>
+                    <td> 204870157 </td>
+                    <td> 24 de marzo </td>
+                    <td> 17:27 </td>
+                    <td> Acoso</td>
+                    <td><a href="">Archivo <br> adjunto </a> </td>
+                    <td> <label class="switch"><input type="checkbox"><span class="slider round"></span></label></td>
+                    <td> <i class="fas fa-edit"></i> </td>
+                </tr>
+            </table> 
+        </div>
+<!--Empieza footer-->
+          <div class="footer">
+            <div class="footer-content">
+              <div class="footer-section about">
+                <h1 class="logo-text"><span>N</span>osotros</h1>
+                <p>
+                  e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te esperan!
+                </p>
+                <br>
+                <div class="contact">
+              <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+              <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+            </div>
+            </div>
+
+            </div>
+            <div class="footer-bottom">
+            &copy;Designed By Arcadia Group
+          </div>
+          </div>
+<!--Termina footer-->
+    </body>
+</html>

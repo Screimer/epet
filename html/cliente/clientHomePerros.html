@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Perros</title>
+        <link rel="stylesheet" type="text/css" href="../../css/cliente/clientHomePerros.css"/><link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+    <body onload="cargarCategorias()">
+         <div class="menu wrapper">
+            <div class="menu-izq">
+            <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+            </div>
+            <div class="menu-centro">
+                <h1> e-pet </h1>
+                <div class= menuUbicacion>
+                 <a href="clienteHome.html">Home</a>
+                    <a href="clientHomePerros.html" style="color: darkgrey">Perros</a>
+                    <a href="clienteHomeGatos.html">Gatos</a>
+                    <a href="clienteNosotros.html">Nosotros</a>
+                    <a href="clientePerfil.html">Mi perfil</a>
+                    <a href="clienteListarHistorialPedidos.html">Mis pedidos</a>
+                </div>
+            </div>
+        </div>
+        <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+        <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+        <hr align="right" class="lineaVerticalAbajo" width="100%"> 
+    <!--termina header-->
+        <div class="wrapper">
+          <h1 class="nombrePerros"> Perros </h1>
+            <div class="categorias wrapper">
+              <h1> Categorías </h1>
+              <div class="categoriasServicios">
+                <h2> Servicios </h2>
+                <div id="categoriasSubirServ"></div>
+              </div>
+              <div class="categoriasProductos">
+                <h2> Productos </h2>
+                <div id="categoriasSubirProd"></div>
+              </div>
+            </div>
+        <h1 class="texto-solo"> Recomendados </h1><br>
+        <div class="wrapper imagenes-dos margin">
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro2.png"></a>
+                <br><br>
+                <h3> Enlatado Pollo Hill's </h3>
+            </div>
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro3.png"></a>
+                <br><br>
+                <h3> Juguete Pups </h3>
+            </div>
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro4.jpg"></a>
+                <br><br>
+                <h3> Enlatado Dietetico Hill's </h3>
+             </div>
+            <div class="productos">
+              <a href=""><img src="../../imgs/productosPerros/comidaPerro8.png"></a>
+              <br><br>
+              <h3> Comestible Busy Purina </h3>
+           </div>
+        </div>
+        <div class="wrapper imagenes-dos margin-top">
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro5.png"></a>
+                <br><br>
+                <h3> Bolsas de desechos BioBag </h3>
+            </div>
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro6.png"></a>
+                <br><br>
+                <h3> Croquetas Puppy Chow Purina </h3>
+            </div>
+            <div class="productos">
+              <a href=""><img src="../../imgs/publicidad/alimento-perro.png"></a>
+              <br><br>
+              <h3> Alimento para Pator alemán </h3>
+          </div>
+            <div class="productos">
+                <a href=""><img src="../../imgs/productosPerros/comidaPerro7.png"></a>
+                <br><br>
+                <h3> Juguete Bola Nerf </h3>
+            </div>
+        </div>
+        </div>
+        <hr align="right" class="lineaVerticalPerros" width="100%">
+        <div class="publicidad-primera wrapper">
+            <h1 class="texto-solo"> Marcas preferidas </h1>
+            <div class="imagenes">
+                <img src="../../imgs/publicidad/publicidadAbajo2.png">
+            </div>
+            <div class="imagenes">
+                <img src="../../imgs/publicidad/publicidadAbajo3.png">
+            </div>
+            <div class="imagenes">
+                <img src="../../imgs/publicidad/3.png">
+            </div>
+        </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="footer-content">
+
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p class="tipo">
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h1><span>S</span>íguenos</h1>
+        <div class="socials">
+          <a href="#"> <img src="../../imgs/iconosYLogo/facebook.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/instagram.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/twitter.png"></a>
+          <a href="#"> <img src="../../imgs/iconosYLogo/youtube.png"></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <h1><span>C</span>ontáctenos</h1>
+        <form action="index.html" method="post">
+          <input type="email" name="email" class="text-input contact-input" placeholder="Correo">
+          <textarea name="message" class="text-input contact-input" placeholder="¿Cuál es su duda?"></textarea>
+          <br>
+          <button type="submit" class="btn btn-big contact-btn"><i class="fas fa-envelope"></i> Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom tipo">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+    <script>
+
+      function cargarCategorias() {
+        fetch("http://localhost:8080/categorias/")
+          .then(
+            function (response) {
+              console.log(response);
+              return response.json();
+            }
+          )
+          .then(
+            function (json) {
+              for (var i = 0; json.length > i; i++) {
+                if (json[i].animal == "Perros" && json[i].tipo == "Producto") {
+                  var linea = "<a id = 'c"+ i +"'  class='rightborder' onclick='cargarLocalStorage("+"c"+i+")'>" + json[i].nombre + "</a><br>"; document.getElementById("categoriasSubirProd").insertAdjacentHTML("beforeend", linea);
+                }
+                if (json[i].animal == "Perros" && json[i].tipo == "Servicio") {
+                  var linea = "<a id = 'd"+ i +"'   class='rightborder' onclick='cargarLocalStorage("+"d"+i+")'>" + json[i].nombre + "</a><br>"; document.getElementById("categoriasSubirServ").insertAdjacentHTML("beforeend", linea);
+                }
+              }
+            }
+          )
+      }
+
+      function cargarLocalStorage(id) {
+      var categoriaSeleccionada = {
+        animal: "Perros",
+        categoria: id.innerHTML,
+      }
+      localStorage.setItem('categoriaSeleccionada', JSON.stringify(categoriaSeleccionada));
+      console.log(localStorage.getItem('categoriaSeleccionada'));
+      location.href='clienteListaProductosPorCategoria.html';
+    }
+    </script>
+    </body>
+</html>

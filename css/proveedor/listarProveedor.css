@@ -1,0 +1,170 @@
+
+.menu-izq, .menu-centro, .segundaSeccion, .primeraSeccion {
+    float: left;
+}
+
+
+.caja {
+  margin:20px auto 40px auto;	
+  border:1px solid black;
+  height:30px;
+  overflow: hidden;
+  width: 230px;
+  position:relative;
+}
+select {
+  background:transparent;
+  border: none;
+  font-size: 17px;
+  height: 30px;
+  padding: 5px;
+  width: 250px;
+}
+
+.tituloPubli1{
+   font-family: 'Advent Pro', sans-serif;
+   text-align: center;
+   margin-left: -17px;
+   margin-top: 10px;
+   color: #6677B3 ;
+}
+.estatus, .tituloPubli1, .searchbar {
+   width: 33%;
+   float: left;
+}
+
+.searchbar {
+   background-image: url(../../imgs/iconosYLogo/lupa%20copy.png);
+   background-repeat: no-repeat;
+   background-position: 4px center;
+   background-size: 20px;
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+   padding-left: 25px;
+   width: 350px;
+   height: 30px;
+   border: 1px solid black;
+   border-radius: 25px;
+   position: relative;
+   left: 530px;
+   top:-4px;
+}
+
+.searchbar input {
+   width: 99%;
+   font-size: 0.8em;
+   border: none;
+}
+.searchbar input:focus {
+   outline: none;
+}
+.tituloPubli1{
+   font-family: 'Advent Pro', sans-serif;
+   text-align: center;
+   margin-left: -17px;
+   margin-top: 10px;
+   color: #6677B3 ;
+}
+.estatus, .tituloClient {
+   width: 33.33%;
+}
+.estatus{
+   margin-left: 20px;
+}
+.tabla {
+    border: 2px solid #E3E3E3;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-right: 10px;
+    font-family: 'Asap', sans-serif;
+}
+
+.titulos {
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    padding: 20px;
+    border: 2px solid #E3E3E3;
+    font-weight: 150;
+    background-color: #E3E3E3;
+    font-weight: 500;
+    
+}
+
+td {
+    border: 2px solid #E3E3E3;
+}
+
+.switch {
+    top: 5px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+.footer{
+    background:#E3E3E3;
+    color: black;
+    height: 4003x;
+    position: relative;
+    margin-top: 40px;
+    text-align: center;
+}

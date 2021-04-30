@@ -1,0 +1,427 @@
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.warnings {
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: #B06AB3;
+  padding-top: 20px;
+}
+
+.wrapper {
+  overflow: auto;
+}
+
+.menu {
+  margin-top: 15px;
+  margin-bottom: 140px;
+  
+}
+
+.menu-izq img {
+  width: 17%;
+  padding: 4px 50px 30px 90px;  
+}
+
+.tituloRegistro {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  background-color: #C4D1FF ;
+  padding: 15px;
+}
+
+.menu-centro h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 57px;
+    color: black;
+    padding-left: 13px;
+}
+
+.menu-centro a {
+    font-family: 'Asap', sans-serif;
+    font-size: 20px;
+    color: black;
+    padding: 20px;
+}
+
+.menuUbicacion {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+.gris {
+    color:darkgrey;
+}
+.carrito {
+    position: absolute;
+    top: 49px;
+    right: 80px;
+    font-size: 15px;
+    width: 2.5%;
+}
+.campana {
+  position: absolute;
+  top: 47px;
+  right: 110px;
+  font-size: 15px;
+  width: 2.5%;
+}
+
+.miCuenta {
+  position: absolute;
+  top: 47px;
+  right: 55px;
+  font-size: 15px;
+  width: 2.5%;
+}
+.botonCuenta {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-izq, .menu-centro {
+  float: left;
+}
+
+.lineaVerticalAbajo {
+  background-color:#E3E3E3  ;
+  height: 7px;
+  margin-top: -150px;
+  border-color: transparent;
+}
+
+
+.profile-main{
+  width: 750px;
+  margin: 0 auto;
+  border: 1px solid #aed5e2;
+  padding-bottom: 30px;
+font-family: 'Asap', sans-serif;
+
+}
+
+.profile-header{
+  height: 200px;
+  width: 100%;
+  background-color: #EBF6FA;
+  border-bottom: 2px solid #E2F3FB;
+}
+.user-detail{
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+  height: 100%;
+}
+.user-image{
+  float: left;
+  position: relative;
+  width: 23%;
+  height: 135px;
+}
+.user-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-top: 35px;
+}
+
+.user-data{
+  float: left;
+  width: 46%;
+  padding-left: 27px;
+  margin-bottom: 20px;
+}
+.user-data h2{ 
+  margin-bottom: 0px;
+  margin-top: 35px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.user-data .post-label:hover{
+  background-color: #F8EDE7;
+  border-color: #F2D4BA;
+}
+.user-data p{
+  font-size: 12px;
+  color: #404040;
+}
+
+
+/*tab*/
+.tab-panel-main{
+  width: 75%;
+  margin: 0 auto;
+}
+ul.tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  position: absolute;
+  top: 207px;
+  right: 400px;
+}
+ul.tabs li{
+  color: #222;
+  display: inline-block;
+  padding: 10px 45px;
+  border-right: 1px solid #E2F3FB;
+  border-top: 2px solid #E2F3FB;
+  cursor: pointer;
+  background: #FAFBFB;
+}
+
+
+.tab-content{
+  display: none;
+  padding: 15px 5px;
+}
+.tab-content.current{
+  display: inherit;
+}
+.skill-box{
+  border:1px solid #ededed;
+  border-radius: 3px;
+  padding: 11px 15px;
+  margin-bottom: 20px;
+}
+.skill-box ul li strong{
+  font-size: 12px;
+}
+.skill-box ul{ 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.skill-box ul li{
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 4px;
+  padding: 4px 4px;
+  border-radius: 2px;
+}
+.skill-box ul li:hover{
+  background-color: #FF6E00;
+  color: #fff !important;
+}
+.skill-box ul li:first-child:hover{
+  background-color: #fff;
+  color: black !important;
+}
+.skill-box ul li i{
+  margin-left: 4px;
+  margin-right: 1px;
+}
+.bio-box{
+  float: left;
+  width: 56%;
+  border:1px solid #ededed;
+  border-radius: 4px;
+}
+.detail-box{
+  float: right;
+  width: 32%;
+  border:1px solid #ededed;
+  padding: 13px;
+  border-radius: 4px;
+}
+.bio-box .heading{
+  padding: 10px 0px 10px 10px;
+}
+.bio-box .heading p{
+  margin: 0px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.bio-box .heading label{
+  float: right;
+  font-size: 9px;
+  font-weight: normal;
+  border: 1px solid #ededed;
+  border-right: none;
+  padding: 2px 1px 2px 5px;
+}
+.bio-box .desc{
+  padding: 10px 10px 10px 10px;
+  text-align: justify;
+  color: #838383;
+  font-size: 13px;
+}
+.detail-box{
+  padding: 10px;
+  font-size: 13px;
+}
+.detail-box p{
+  font-weight: 600;
+  margin: 0px;
+}
+.detail-box .ul-first{
+  padding: 0px;
+  list-style: none;
+  float: left;
+}
+.detail-box .ul-second{
+  float: left;
+  list-style: none;
+  color: #767676;
+  margin-left: 25px;
+  margin-top: -75px;
+}
+
+
+.footer{
+    background:#E3E3E3;
+    color: black;
+    height: 4003x;
+    position: relative;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer .footer-content{
+    height: 300px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section{
+    flex: 1;
+    padding: 25px;
+    
+}
+
+.footer .footer-content h1,
+.footer .footer-content h2{
+    color: black;
+    font-size: 30px;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.footer .footer-content .about h1 span {
+    color: #6677B3;
+    font-size: 51px;
+    font-family: 'Advent Pro', sans-serif;
+}
+.footer .footer-content .links h1 span {
+    color: #6677B3;
+    font-size: 51px;
+    font-family: 'Advent Pro', sans-serif;
+}
+.footer .footer-content .contact-form h1 span {
+    color: #6677B3;
+    font-size: 51px;
+   font-family: 'Advent Pro', sans-serif;
+}
+.footer .footer-content .about .contact span{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.tipo{
+    font-family: 'Asap', sans-serif;
+}
+.footer .footer-content .links ul a{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+    font-family: 'Asap', sans-serif;
+}
+
+.footer .footer-content .links ul a:hover{
+    color: black;
+    margin-left: 15px;
+    transition: all .5s;
+    font-family: 'Asap', sans-serif;
+}
+
+.footer .footer-content .about .socials a{
+    border: 1px solid black;
+    width: 45px;
+    color: black;
+    height: 45px;
+    padding-top: 5px;
+    margin-right: 10pxs ;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 10px;
+    transition: all .8s;
+     font-family: 'Asap', sans-serif;
+}
+
+.footer .footer-content .about .socials a:hover{
+    border: 3px solid white;
+    color: black;
+    transition: all .5s;
+
+}
+
+.footer .footer-bottom{
+    background: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+    font-family: 'Asap', sans-serif;
+    
+}
+.socials img {
+    width: 8%;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 70px;
+}
+.footer .footer-content .contact-form .contact-input{
+    background:#C4D1FF;
+    color: black;
+    margin-bottom: 10px;
+    line-height: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    font-family: 'Asap', sans-serif;
+}
+
+.footer .footer-content .contact-form .contact-input:focus{
+    background: #FFF2D0;
+}
+
+.footer .footer-content .contact-form .contact-btn{
+        float: right;
+}
+
+.btn-big{
+    padding: .7rem 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 20px;
+}
+ul {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.footer-section h1 {
+    margin-right: 12px;
+}
+
+

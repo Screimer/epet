@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Admin Proveedores</title>
+  <script src="https://kit.fontawesome.com/ed860d5f36.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/administrador/adminListar.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Listar Proveedores</title>
+</head>
+
+<body onload="cargarTabla()">
+  <!--Empieza header-->
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1> e-pet </h1>
+      <div class=menuUbicacion>
+        <a href="adminHome.html">Home</a>
+        <a href="http://localhost:8080/html/administrador/adminListProv.html" class="leftborder"
+          style="color:darkgrey">Proveedores</a>
+        <a href="http://localhost:8080/html/administrador/adminListClient.html" class="leftborder">Clientes</a>
+        <a class="leftborder" href="http://localhost:8080/html/administrador/adminListMascotas.html">Mascotas</a>
+        <a href="http://localhost:8080/html/administrador/adminListProd.html" class="leftborder">Productos</a>
+        <a href="http://localhost:8080/html/administrador/adminListServ.html" class="leftborder">Servicios</a>
+        <a href="http://localhost:8080/html/administrador/adminListCate.html" class="leftborder">Categorias</a>
+        <a href="http://localhost:8080/html/administrador/adminListReportes.html" class="leftborder">Reportes</a>
+      </div>
+    </div>
+  </div>
+  <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+  <hr class="lineaVerticalAbajo" width="100%">
+  <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+  <!--Termina header-->
+  <!--Empieza body-->
+  <div class="wrapper encabezado">
+    <div class="estatus">
+    </div>
+    <div class="tituloPubli1">
+      <h1 style="position: relative;left:500px;margin-bottom: 40px;margin-top: 30px">Proveedores Pendientes</h1>
+    </div>
+  </div>
+  <div class="wrapper">
+    <table class="tabla" id="tabla">
+      <tr class="titulos">
+        <td>Tipo<br>identificación</td>
+        <td># identificación</td>
+        <td>Provincia</td>
+        <td>Cantón</td>
+        <td>Nombre<br>encargado</td>
+        <td>Primer<br>apellido</td>
+        <td>Segundo<br>apellido</td>
+        <td>Tipo<br>identificación</td>
+        <td># identificación</td>
+        <td>Género</td>
+        <td>Teléfono</td>
+        <td>Email</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tbody id="tablas"></tbody>
+    </table>
+  </div>
+  <!--Empieza footer-->
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p>
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <!--Termina footer-->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var proveedores = [];
+    var si = 0;
+    function cargarTabla() {
+      fetch("http://localhost:8080/proveedores/")
+        .then(
+          function (response) {
+            console.log(response);
+            return response.json();
+          }
+        )
+        .then(
+          function (json) {
+            proveedores = json;
+            for (var cont = 0; json.length > cont; cont++) {
+              var contador = cont;
+              var linea = "<tr><td>" + json[cont].tipoIdEmpresa + "</td><td>" + json[cont].idEmpresa + "</td><td>" + json[cont].provinciaEmpresa + "</td><td>" + json[cont].cantonEmpresa + "</td><td>" + json[cont].nombreProveedor + "</td><td>" + json[cont].primerApellido + "</td><td>" + json[cont].segundoApellido + "</td><td>" + json[cont].tipoIdProveedor + "</td><td>" + json[cont].identificacionProveedor + "</td><td>" + json[cont].genero + "</td><td>" + json[cont].numeroTelefonoProveedor + "</td><td>" + json[cont].email + "</td><td>" + '<button class="boton-aceptar" id = ' + cont + ' value = ' + json[cont]._id + ' onclick="aceptarProveedor(id)" >' + "Aceptar" + '</button>' + "</td><td>" + '<button class="boton-rechazar" id = ' + cont + 1 + ' value = ' + json[cont]._id + ' onclick="rechazarProveedor(id)" >' + "Rechazar" + '</button>' + "</td></tr>";
+
+
+              document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+              var arreglo = document.getElementsByClassName('+contador+');
+
+              for (var i = 0; arreglo.length > i; i++) {
+                arreglo[i].setAttribute("value", idUnico)
+              }
+
+            }
+          }
+        )
+    }
+    function rechazarProveedor(id) {
+      var idUsuario = {
+        registroAEliminarProveedorId: document.getElementById(id).value,
+      }
+
+
+      fetch("http://localhost:8080/proveedores/Eliminar", {
+        method: 'POST',
+        body: JSON.stringify(idUsuario),
+        headers: { 'Content-Type': 'application/json' }
+      })
+        .then(
+          function (response) {
+            return response.json();
+          }
+
+        )
+      location.reload();
+    }
+
+
+    function aceptarProveedor(id) {
+      var idUsuario = {
+        registroAEliminarProveedorId: document.getElementById(id).value
+      }
+
+      var iden= document.getElementById(id).value;
+
+  fetch("http://localhost:8080/proveedores/")
+    .then(
+      function (response) {
+        console.log(response);
+        return response.json();
+      }
+    )
+    .then(
+      function (json) {
+        fetch("http://localhost:8080/proveedores/Aceptar", {
+          method: 'POST',
+          body: JSON.stringify(idUsuario),
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .then(
+          function (response) {
+            console.log(iden);
+            console.log(json);
+            for (var i = 0; json.length > i; i++) {
+              console.log(json[i]._id);
+              if (json[i]._id == iden) {
+                Email.send({
+                  Host: "smtp.gmail.com",
+                  Username: "epetstore1@gmail.com",
+                  Password: "Proyecto123",
+                  To: json[i].email,
+                  From: "epetstore1@gmail.com",
+                  Subject: "Creación de cuenta",
+                  Body: "Nos complace comentarle que su registro en e-pets se realizó con éxito. \nEsta sería su nueva contraseña:" + json[i].contrasena + ", la cual podrá modificar en la parte de 'He olvidado mi contraseña'. \nEsperemos que disfrute mucho nuestro servicio. \nEn este link podrá iniciar sesión: http://localhost:8080/html/universal/uniFormInicioSesion.html",
+                }).then(
+                  function (response) {
+                    console.log(response);
+                    location.reload();
+                  }
+                );
+              }
+            }
+          }
+        )
+      }
+    )
+  }
+  </script>
+</body>
+</html>

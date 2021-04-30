@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <title>Mis mascotas</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../css/cliente/clienteListarMediosPago.css"
+    />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../../css/cliente/clienteListMascotas.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+<body onload="cargarTabla()">
+  <!--Empieza header-->
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1>e-pet</h1>
+      <div class="menuUbicacion">
+        <a href="clienteHome.html"  class="black">Home</a>
+        <a href="clientHomePerros.html"
+        class="black">Perros</a
+        >
+        <a href="clienteHomeGatos.html"
+        class="black" >Gatos</a
+        >
+        <a href="clienteNosotros.html"
+        class="black" >Nosotros</a
+        >
+        <a href="clientePerfil.html"
+        class="black">Mi perfil</a
+
+        >
+        <a href="clienteListarHistorialPedidos.html" class="black">Mis pedidos</a
+        >
+      </div>
+    </div>
+  </div>
+  <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+  <hr class="lineaVerticalAbajo" width="100%">
+  <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+  <!--Termina header-->
+  <!--Empieza body-->
+  <div class="wrapper encabezado">
+    <div class="estatus">
+    </div>
+    <div class="tituloPubli1">
+      <h1>Mascotas</h1>
+    </div>
+  </div>
+  <div class="wrapper">
+    <table class="tabla" id="tabla">
+      <tr class="titulos">
+        <td>Nombre mascota</td>
+        <td>Raza</td>
+        <td>Padecimientos</td>
+        <td>Vacunas</td>
+      </tr>
+      <tbody id="tablas"></tbody>
+    </table>
+  </div>
+  <!--Empieza footer-->
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p>
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <!--Termina footer-->
+  <script>
+    var mascotas = [];
+    var si = 0;
+
+    function cargarTabla() {
+      var datosCliente = JSON.parse(localStorage.getItem('datosCliente'));
+
+      fetch("http://localhost:8080/mascotas")
+        .then(
+          function (response) {
+            console.log(response);
+            return response.json();
+          }
+        )
+        .then(
+          function (json) {
+            mascotas = json;
+            var i = 1;
+              for (var cont = 0; json.length > cont; cont++) {
+                if (json[cont].identificacion == datosCliente.identificacion) {
+                var linea = "<tr><td>" + json[cont].name + "</td><td>" + json[cont].raza + "</td><td>" + json[cont].padecimientos + "</td><td>" + json[cont].vacunas + "</td></tr>"; document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+              }
+            }
+          }
+        )
+    }
+
+    function filtrarBar() {
+      si = 0;
+      const search = document.getElementById("search").value;
+      document.getElementById("tablas").innerHTML = '';
+      for (var i = 0; i < mascotas.length; i++) {
+        if (mascotas[i].name.toLowerCase().includes(search.toLowerCase()) || mascotas[i].raza.toLowerCase().includes(search.toLowerCase()) || mascotas[i].padecimientos.toLowerCase().includes(search.toLowerCase()) || mascotas[i].vacunas.toLowerCase().includes(search.toLowerCase())) {
+          var linea = "<tr><td>" + mascotas[i].name + "</td><td>" + mascotas[i].raza + "</td><td>" + mascotas[i].padecimientos + "</td><td>" + mascotas[i].vacunas + "</td><tr>";
+          document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+          si = si + 1;
+        }
+      }
+      if (si == 0) {
+        var alerta = "<tr><td colspan=4> No se encontró ningún registro.</td><tr>"; document.getElementById("tablas").insertAdjacentHTML("beforeend", alerta);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <script src="https://kit.fontawesome.com/ed860d5f36.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/administrador/adminListar.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body onload="cargarTabla()">
+  <!--Empieza header-->
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1> e-pets </h1>
+      <div class="menuUbicacion">
+        <a href="adminHome.html">Home</a>
+        <a href="http://localhost:8080/html/administrador/adminListProv.html" class="leftborder">Proveedores</a>
+        <a href="http://localhost:8080/html/administrador/adminListClient.html" class="leftborder">Clientes</a>
+        <a class="leftborder" style="color:darkgrey" href="http://localhost:8080/html/administrador/adminListRazPadVac.html">Mascotas</a>
+        <a href="http://localhost:8080/html/administrador/adminListProd.html" class="leftborder">Productos</a>
+        <a href="http://localhost:8080/html/administrador/adminListServ.html" class="leftborder">Servicios</a>
+        <a href="http://localhost:8080/html/administrador/adminListCate.html" class="leftborder">Categorias</a>
+        <a href="http://localhost:8080/html/administrador/adminListReportes.html" class="leftborder">Reportes</a>
+      </div>
+    </div>
+  </div>
+  <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+  <hr class="lineaVerticalAbajo" width="100%">
+  <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+  <!--Termina header-->
+  <!--Empieza body-->
+  <div class="wrapper encabezado">
+    <div class="estatus">
+      <select id="filtrar" name="filtrar" onchange="filtrar()" class="caja">
+        <option value="0"> Todos </option>
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+      </select>
+      <div class="searchbar"><input type="search" name="input" placeholder="Buscar" id="search" autofocus
+          onkeyup="filtrarBar()"></div>
+    </div>
+    <div class="tituloPubli1">
+      <h1>Razas</h1>
+    </div>
+    <button class="miCate acomodar-boton-crear-categoria "><a
+        href="http://localhost:8080/html/administrador/adminCrearRazas.html" class="botonCuenta letra"> Registrar razas
+      </a> </button>
+  </div>
+  <div class="wrapper">
+    <table class="tabla" id="tabla">
+      <tr class="titulos">
+        <td>Nombre de la raza</td>
+        <td>Tipo de animal</td>
+      </tr>
+      <tbody id="tablas"></tbody>
+    </table>
+  </div>
+  <!--Empieza footer-->
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p>
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <!--Termina footer-->
+  <script>
+    var razas = [];
+    var si = 0;
+    function cargarTabla() {
+      fetch("http://localhost:8080/razas")
+        .then(
+          function (response) {
+            console.log(response);
+            return response.json();
+          }
+        )
+        .then(
+          function (json) {
+            razas = json;
+            for (var cont = 0; json.length > cont; cont++) {
+              var linea = "<tr><td>" + json[cont].nombre + "</td><td>" + json[cont].animal + "</td></tr>"; document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+            }
+          }
+        )
+    }
+    function filtrar() {
+      si = 0;
+      const animal = document.getElementById("filtrar").value;
+      document.getElementById("tablas").innerHTML = '';
+      for (var i = 0; i < razas.length; i++) {
+        if (razas[i].animal == animal) {
+          var linea = "<tr><td>" + razas[i].nombre + "</td><td>" + razas[i].animal + "</td></tr>";
+          document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+          si = si + 1;
+        }
+        if (animal == 0) {
+          var linea = "<tr><td>" + razas[i].nombre + "</td><td>" + razas[i].animal + "</td></tr>";
+          document.getElementById("tablas").insertAdjacentHTML("beforeend", linea); {
+            si = si + 1;
+          }
+        }
+      }
+      if (si == 0) {
+        var alerta = "<tr><td colspan=2>No se encontró ningún registro.</td><tr>"; document.getElementById("tablas").insertAdjacentHTML("beforeend", alerta);
+      }
+    }
+    function filtrarBar() {
+      si = 0;
+      const search = document.getElementById("search").value;
+      document.getElementById("tablas").innerHTML = '';
+      for (var i = 0; i < razas.length; i++) {
+        if (razas[i].animal.toLowerCase().includes(search.toLowerCase()) || razas[i].nombre.toLowerCase().includes(search.toLowerCase())) {
+          var linea = "<tr><td>" + razas[i].nombre + "</td><td>" + razas[i].animal + "</td></tr>";
+          document.getElementById("tablas").insertAdjacentHTML("beforeend", linea);
+          si = si + 1;
+        }
+      }
+      if (si == 0) {
+        var alerta = "<tr><td colspan=2> No se encontró ningún registro.</td><tr>"; document.getElementById("tablas").insertAdjacentHTML("beforeend", alerta);
+      }
+    }
+  </script>
+</body>
+
+</html>

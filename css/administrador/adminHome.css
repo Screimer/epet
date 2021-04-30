@@ -1,0 +1,425 @@
+/* header*/
+
+.menu-izq img {
+    width: 38%;
+    padding: 4px 50px 30px 90px;
+    
+}
+
+.menu-centro h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 57px;
+    color: black;
+    padding-left: 13px;
+    margin-top: -14px;
+}
+.searchbar {
+    background-image:url(../../imgs/iconosYLogo/lupa%20copy.png);
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding-left:25px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    position: absolute;
+    top: 77px;
+    right: 500px;
+
+}
+.searchbar input {
+    width: 99%;
+    font-size: 0.8em;
+    border: none;
+}
+.searchbar input:focus {
+    outline: none;
+}
+.menu-centro a {
+    font-family: 'Asap', sans-serif;
+    font-size: 20px;
+    color: black;
+    padding: 40px;
+}
+
+.menuUbicacion {
+    position: absolute;
+    top: 123px;
+    margin-left: 34.3%; 
+}
+.carrito {
+    position: absolute;
+    top: 70px;
+    right: 45px;
+    font-size: 15px;
+    width: 2.5%;
+}
+.campana {
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    font-size: 15px;
+    width: 2.5%;
+}
+
+.miCuenta {
+    position: absolute;
+    top: 40px;
+    right: 28px;
+    font-size: 15px;
+    width: 2.5%;
+}
+.botonCuenta {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+.vista{
+    background-color: transparent;
+    font-family: 'Advent Pro', sans-serif;
+    position: absolute;
+    top: 110px;
+    right: 88px;
+    font-size: 14px;
+    border-color: black;
+    border-style: solid;
+    border-width:medium;
+}
+
+.vistaCliente {
+    text-decoration: none;
+    color: black;
+}
+
+
+.menu-izq, .menu-centro {
+    float: left;
+}
+
+.lineaVerticalAbajo {
+    background-color:#E3E3E3 ;
+    height: 7px;
+    margin-top: -150px;
+    border-color: transparent;
+}
+
+.publicidad-arriba, .texto-ultimo, .imagens, .categoriasServiciosPerros, .categoriasProductosPerros {
+    float: left;
+}
+.tituloRegistro {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    padding-top: 20px;
+}
+.carousel-item {
+    height: 470px;
+}
+
+/*main*/
+
+
+.container1{
+    position: relative;
+    height: 300px;
+    margin: 570px auto;
+    top: -500px;
+    margin-left: 30px;
+}
+
+.container1 .box{
+    position:relative;
+    width: calc(390px - 30px);
+    height: calc(300px - 30px);
+    background: #6677B3;
+    float: left;
+    margin: 5px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 15px; 
+    left: 9%;
+}
+/*Color de fondo sin animar de los botones*/
+.container1 .box .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #6677B3;
+    transition: 0.7s;
+    z-index: 1;
+
+}/* Fin de Color de fondo sin animar de los botones*/
+
+.container1 .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.container1 .box .icon .fa{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:  80px;
+    transition: 0.5s;
+    color: #FFF2D0;
+}
+
+.container1 .box:hover .icon .fa {
+    font-size:  40px;
+}
+
+.container1 .box .content{
+    margin-top: 100px;
+    top: 100%;
+    height:calc(100% - 100px);
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.container1 .box:hover .content{
+    top: 100px;
+    opacity: 1;
+}
+
+.container1 .box .content h3{
+    margin: 0 0 0px;
+    padding: 0;
+    color: white;
+    font-size: 30px;
+}
+
+.container1 .box .content p{
+    margin: 0;
+    padding: 0;
+    color: white;
+
+}
+
+/* productos publi*/
+.texto-solo {
+    font-family: 'Asap', sans-serif;
+    padding: 15px;
+    margin-top: 23px;
+    text-align: center;
+}
+
+.productos {
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+}
+
+.productos img {
+    width: 60%;
+}
+.productos button {
+    font-size: 15px;
+    background-color: transparent;
+    color: black;
+    border-style: solid;
+    border-radius: 10px;
+    border-width:thin;
+}
+
+
+.lineaVerticalPerros{
+    background-color:#E3E3E3  ;
+    margin-top: 280px;
+    height: 5px;
+    border-color: transparent;
+}
+.nombreGatos {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: black;
+    padding: 12px;
+    background-color: #C4D1EF;
+    margin-top: 30px
+}
+.imagenes {
+    float: left;
+    width: 33%;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagenes img {
+    width: 100%;
+    border: 5px;
+    border-style: solid;
+    border-width:thin;
+    border-color: #E3E3E3;
+}
+
+.publicidad-primera {
+    background-color: #FFF2D0;
+}
+
+
+/*Css al header y footer*/
+
+a {
+    color: darkgrey;
+    text-decoration: none;
+}
+
+.wrapper {
+    overflow: auto;
+}
+.menu {
+    margin-top: 15px;
+    margin-bottom: 140px;
+    
+}
+.menu-izq img {
+    width: 30%;
+    padding: 4px 50px 30px 20px;  
+}
+
+.menu-centro h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 57px;
+    color: black;
+    padding-left: 55px;
+    margin-top: -14px;
+}
+
+.menu-centro a {
+    font-family: 'Asap', sans-serif;
+    font-size: 20px;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.leftborder {
+    border-left: 1px solid black;
+}
+
+.menuUbicacion {
+    position: absolute;
+    top: 100px;
+    left: 170px;
+}
+
+.menu-izq, .menu-centro, .segundaSeccion, .primeraSeccion {
+    float: left;
+}
+
+.lineaVerticalAbajo {
+    background-color:#E3E3E3  ;
+    height: 7px;
+    margin-top: -150px;
+    border-color: transparent;
+}
+
+
+.footer{
+    background:#E3E3E3;
+    color: black;
+    height: 4003x;
+    position: absolute;
+    width: 100%;
+    bottom: -90%;
+    text-align: center;
+}
+
+
+.footer .footer-content .footer-section{
+    flex: 1;
+    padding: 25px;
+    
+}
+
+.footer .footer-content h1,
+.footer .footer-content h2{
+    color: black;
+    font-size: 30px;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.footer .footer-content .about h1 span {
+    color: #6677B3;
+    font-size: 51px;
+    font-family: 'Asap', sans-serif;
+}
+
+
+.footer .footer-content .about .contact span{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    font-family: 'Asap', sans-serif;
+}
+
+.footer .footer-bottom{
+    background: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+    font-family: 'Asap', sans-serif;
+    
+}
+
+.footer-section h1 {
+    margin-right: 12px;
+}
+
+.contact {
+    margin-top: -15px;
+}
+
+.footer-section {
+    margin-top: -10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Producto</title>
+  <link rel="stylesheet" type="text/css" href="../../css/cliente/clientDetalleProd.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body onload="cargarDetalleProdTres()">
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1> e-pet </h1>
+      <div class=menuUbicacion>
+        <a href="clienteHome.html">Home</a>
+        <a href="clientHomePerros.html">Perros</a>
+        <a href="clienteHomeGatos.html">Gatos</a>
+        <a href="clienteNosotros.html">Nosotros</a>
+        <a href="clientePerfil.html">Mi perfil</a>
+        <a href="clienteListarHistorialPedidos.html">Mis pedidos</a>
+      </div>
+    </div>
+  </div>
+  <a href="../../index.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+  <hr align="right" class="lineaVerticalAbajo" width="100%">
+  <!--termina header-->
+  <div class="fondo-3">
+    <div>
+      <div class="grid">
+        <div class="imagen-alimento derecha fondo centrar">
+          <img id="imagenProducto" class="imagen-alimento" src="" alt="">
+        </div>
+        <div class="precio-alimento ">
+          <p id="tituloProducto" class="tipografia-titulos">
+            No existe información que mostrar para el producto seleccionado.
+          </p>
+          <p class="tipografia-cuerpo"></p>
+          <p id="precioProducto" class="tipografia-titulos-2">Precio</p>
+          <div class="grid-descripcion-informacion-raza wrapper">
+            <p class="tipografia-titulos-2 primero">Descripción:</p>
+            <div class="tipografia-cuerpo segundo">
+              <p id="descripcionProducto"></p>
+            </div>
+          </div>
+          <div class="grid-descripcion-informacion-raza wrapper">
+            <div class="tipografia-cuerpo ">
+              <div class="primero tipografia-titulos-2 "> Proveedor: </div>
+              <div class="segundo" id="nombreProveedor"></div>
+            </div>
+          </div>
+          <hr align="left" class="lineaVerticalAbajoD" width="70%">
+          <div class="tipografia-titulos-2">
+            Cantidad:
+            <input class="cantidad" type="number" id="number" name="" min="1" onchange="updateTotal()">
+          </div><br>
+          <div class="tipografia-titulos-2 wrapper">
+            <div class="primeroU"> Subtotal: </div>
+            <div class="cantidadU segundo" name="" id="total">0</div>
+          </div>
+          <br>
+          <div class="tipografia-cuerpo margin-button">
+            <button onclick="SolicitarProducto()" class="botones" type="submit"> Solicitar pedido<i class="fas"></i> </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="footer-content">
+
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p class="tipo">
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h1><span>S</span>íguenos</h1>
+        <div class="socials">
+          <a href="#"> <img src="../../imgs/iconosYLogo/facebook.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/instagram.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/twitter.png"></a>
+          <a href="#"> <img src="../../imgs/iconosYLogo/youtube.png"></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <h1><span>C</span>ontáctenos</h1>
+        <form action="index.html" method="post">
+          <input type="email" name="email" class="text-input contact-input" placeholder="Correo">
+          <textarea name="message" class="text-input contact-input" placeholder="¿Cuál es su duda?"></textarea>
+          <br>
+          <button type="submit" class="btn btn-big contact-btn"><i class="fas fa-envelope"></i> Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom tipo">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <script>
+    var number = document.getElementById("number");
+
+    
+    function updateTotal() {
+      var descripcionTexto = JSON.parse(localStorage.getItem("valorDescripcion"));
+      console.log("El valor de la descripcion es: " + descripcionTexto);
+      fetch("http://localhost:8080/clienteDetalleProducto/mostrarInfoProducto")
+        .then(
+          function (response) {
+            console.log(response);
+            return response.json();
+          }
+        )
+        .then(
+          function (json) {
+
+            for (var cont = 0; json.length > cont; cont++) {
+
+              if (json[cont].descripcion == descripcionTexto) {
+                var precio = parseInt(json[cont].precio);
+              }
+            }
+
+            document.getElementById("total").innerHTML = ''
+            var suma = (number.value * precio); document.getElementById("total").insertAdjacentHTML("beforeend", suma);
+
+
+          }
+        )
+    }
+
+    
+
+    function SolicitarProducto() {
+      fetch("http://localhost:8080/clienteDetalleProducto/mostrarInfoProducto")
+        /*Aqui estoy obteniendo los datos de la base de datos de productos y servicios*/
+        .then(
+          function (response) {
+            return response.json();
+    
+          }
+        )
+        .then(
+          function (json) {
+            /*Aqui estoy obteniendo los datos de la base de datos de productos y servicios*/
+            var descripcionDeBusqueda = document.getElementById("descripcionProducto").innerHTML;
+            console.log("El valor de la descripcion es : " + descripcionDeBusqueda);
+            console.log("El tamaño es: "+json.length);
+
+            console.log(descripcionDeBusqueda);
+
+            for (var cont = 0; json.length > cont; cont++) {
+    
+              if (json[cont].descripcion == descripcionDeBusqueda) {
+                console.log(json[cont].descripcion);
+
+                /*Obteniendo informacion relevante para registrar el proveedor desde la base de datos*/
+                var identificacionEncontradaProveedor = json[cont].identificacionProveedor;
+                var nombreEmpresaEncontrada = json[cont].nombreEmpresa;
+                var nombreProductoEncontrado = json[cont].nombreDelProducto;
+                var precioEncontradoProducto = json[cont].precio;
+                var numeroEncontradoTelefonoEmpresa = json[cont].numeroTelEmpresa;
+                
+                let datosProveedor = {
+                  identificacionEncontradaLSProveedor: identificacionEncontradaProveedor,
+                  nombreEmpresaEncontradaLS: nombreEmpresaEncontrada,
+                  nombreProductoEncontradoLS: nombreProductoEncontrado,
+                  precioEncontradoProductoLS: precioEncontradoProducto,
+                  numeroEncontradoTelefonoEmpresaLS: numeroEncontradoTelefonoEmpresa,
+                }
+                localStorage.setItem("datosProveedor", JSON.stringify(datosProveedor));
+                break;
+                
+              }
+                
+                /*Si por alguna razon no puedo obtener esta informacion que estoy tratando de enviar mas abajo lo que podria hacer es
+                declarar un objeto con dicha informacion y luego meterlo en el local storage y luego posterior a eso
+                Lo que podria hacer es acceder a esa misma informacion que estoy guardado pero ahora desde afuera del ciclo 
+                de esa manera tecnicamente podria acceder a dicha informacion*/
+                        
+              
+            }
+            
+           
+          }
+        )
+      /*Obteniendo informacion relevante para la obtecion de los datos del cliente desde localstorage*/
+      var datosProveedorDesdeLocalStorage = JSON.parse( localStorage.getItem("DatosProveedor"));
+      var datosCliente = JSON.parse(localStorage.getItem("datosCliente"));
+      console.log(datosCliente.identificacion);
+      
+      var identificacionDelCliente = datosCliente.identificacion;
+      var nombreDelCliente = datosCliente.nombreCliente;
+      var numeroTelefonoDelCliente = datosCliente.numeroTelefono;
+      console.log(identificacionDelCliente);
+      var datosDelProducto = {
+        identificacionCliente:identificacionDelCliente,
+        nombreCliente:nombreDelCliente,
+        nombreDelProducto: datosProveedorDesdeLocalStorage.nombreProductoEncontradoLS,
+        precio: datosProveedorDesdeLocalStorage.precioEncontradoProductoLS,
+        cantidadDeProducto: document.getElementById("number").value,
+        subtotalDeProducto: document.getElementById("total").innerHTML,
+        numeroTelefonoEmpresa:datosProveedorDesdeLocalStorage.numeroEncontradoTelefonoEmpresaLS,
+        nombreDelCliente:nombreDelCliente,
+        numeroDeTelefonoCliente:numeroTelefonoDelCliente,
+        nombreEmpresaProducto:datosProveedorDesdeLocalStorage.nombreEmpresaEncontradaLS,
+        numeroIdentificacionProveedor:datosProveedorDesdeLocalStorage.identificacionEncontradaLSProveedor,
+        estado:"Pendiente"
+
+      }
+      fetch("http://localhost:8080/clienteDetalleProducto/anadirAlCarrito", {
+        method: 'POST',
+        body: JSON.stringify(datosDelProducto),
+        headers: { 'Content-Type': 'application/json' }
+      })
+        .then(
+          function (response) {
+            location.href = "http://localhost:8080/html/cliente/clienteListarHistorialPedidos.html";
+            return response.json();
+          }
+    
+        )
+    }
+
+
+  </script>
+
+  <script src="../../javaScript/cargardetalleprod.js"></script>
+  
+</body>
+
+</html>

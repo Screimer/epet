@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.inputs-select{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 40%;
+    height: 50%;
+    width: 60%;
+}
+
+.ladoTexto {
+    font-size: 21px;
+     font-family: 'Asap', sans-serif;
+     color: #6677B3;
+}
+.lado {
+    position:  relative;
+    left: 390px;
+}
+.select-select{
+        
+    height: 50%;
+    border:1px solid #d9d9d9;
+} 
+
+
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:red;
+    margin-bottom: 17px;
+    font-size: 17px;
+    font-family: 'Asap', sans-serif;
+}
+.warningsU {
+    width: 200px;
+    position: relative;
+    top: -18px;
+    text-align: center;
+    margin: auto;
+    color:red;
+    margin-bottom: 17px;
+    font-size: 17px;
+    font-family: 'Asap', sans-serif;
+}
+.warnings-img {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin: auto;
+    color:red;
+    margin-bottom: 17px;
+    font-size: 17px;
+    font-family: 'Asap', sans-serif;
+}
+
+/*Inicio de darle estilos al input tipo file */
+
+/*Fin de darle estilos al input tipo file */
+
+.wrapper {
+    overflow: auto;
+}
+
+.menu-izq, .menu-centro, .segundaSeccion, .primeraSeccion , .terceraSeccion {
+    float: left;
+}
+
+.tituloRegistro {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    background-color: #C4D1FF;
+    padding: 20px;
+}
+.formulario {
+    margin: 30px 200px;
+    box-shadow: 2px 2px 5px #999;
+    font-family: 'Asap', sans-serif;
+    font-size: 23px;
+    padding: 20px;
+}
+.formulario p {
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.primeraSeccion {
+    padding: 30px 50px;
+    margin-left: -10px
+}
+.primeraSeccion, .segundaSeccion , .terceraSeccion {
+    width: 33.3%;
+}
+/*Inicio del Css para el input de tipo File*/
+.choose::-webkit-file-upload-button {
+    color: white;
+    display: inline-block;
+    background: #6677B3;
+    border: none;
+    padding: 7px 15px;
+    font-weight: 700;
+    border-radius: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 10pt;
+}
+
+/*Inicio del Css para el boton de terminar registro*/
+
+.botton-terminar-registro{
+    background-color: rgba(26, 151, 26, 0.377);
+}
+
+.boton-terminar-registro {
+    
+    padding-left: 30%;
+}
+
+
+/*Fin del Css para el boton de terminar registro*/
+
+/*Fin del Css para el input de tipo File*/
+
+#descripcion {
+    width: 102%;
+    height: 155px;
+}
+.caja {
+    display: flex;
+    justify-content: center;
+    margin:20px auto 40px auto;	
+    border:1px solid #d9d9d9;
+    height:35px;
+    overflow: hidden;
+    width: 230px;
+    position:relative;
+}
+select {
+   background:transparent;
+   border: none;
+   font-size: 17px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+select:focus{outline: none;}
+
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+}
+
+.botonSubirFoto{
+    position: relative;
+    top: 15px;
+    left: 60px;
+    width: 220px;
+    padding: 10px 30px;
+    font-size: 17px;
+    background-color: #E3E3E3;;
+    color: black;
+    border-style: solid;
+    border-radius: 40px;
+    border-width:thin;
+    box-shadow: 2px 2px 5px #999;
+    margin-bottom: 20px;
+    color: black;
+    font-family: 'Asap', sans-serif;
+    text-align: center;
+    
+}
+
+.checkboxes {
+    margin-left: 15px;
+}
+
+.botonCrear{
+    margin-top: 8px;
+    margin-left: 50px; 
+    width: 200px;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    background-color:#E3E3E3;
+    color: black;
+    border-style: solid;
+    border-radius: 40px;
+    border-width:thin;
+    box-shadow: 2px 2px 5px #999;
+    
+}
+.opciones {
+    background-color: #FFEFC4;
+    padding: 7px;
+}
+input[type=checkbox] {
+    transform: scale(1.6);
+    margin-right: 10px;
+    margin-bottom: 4px;
+}
+.redaccionVacunas {
+    font-size: 20px;
+    font-family: 'Asap', sans-serif;
+    text-align: center;
+}
+.cbox1 {
+    font-family: 'Asap', sans-serif;
+    font-size: 17px;
+    padding: 5px;
+    
+}
+ul {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.segundaSeccion {
+    margin-top: 3%;
+}
+
+.terceraSeccion {
+    margin-top: 4%;
+}
+
+.terceraSeccion a {
+    text-decoration: none;
+    color: black;
+}
+
+.segundaSeccion a {
+    text-decoration: none;
+    color: black;
+}
+.lado {
+    position:  relative;
+    top: 100px;
+    left: 160px;
+    
+}
+.ladoTexto {
+    font-size: 21px;
+     font-family: 'Asap', sans-serif;
+     color: #6677B3;
+}

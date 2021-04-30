@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    overflow: auto;
+}
+.valorUno, .valorDos, .valorTres, .valorCuatro, .valorCinco {
+    float: left;
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+}
+.wallpaper {
+    z-index: 0;
+}
+.formulario {
+    position: absolute;
+    top: -20px;
+    margin: 13%;
+    box-shadow: 2px 2px 5px #999;
+    font-family: 'Asap', sans-serif;
+    font-size: 22px;
+    padding: 20px;
+    background-color: white;
+    z-index: 1;
+    margin-bottom: 
+    
+}
+.mision, .vision {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.somos {
+    font-family: 'Lato', sans-serif; 
+    text-align: center;
+    font-size: 80px;
+}
+.somos span {
+    color: #10ABD7;
+}
+.logo {
+    width: 50%;
+    position: relative;
+    left: 25%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.mision h1 {
+  font-family: 'Lato', sans-serif;  
+   background-color: #E3E3E3;
+   text-align: center;
+   font-size: 30px;
+}
+.mision h3{
+ font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+.vision h1 {
+  font-family: 'Lato', sans-serif;  
+   background-color: #E3E3E3;
+   text-align: center;
+   font-size: 30px;
+}
+.vision h3{
+ font-family: 'Merriweather Sans', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+.valores h2 {
+  font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    min-height: 42px;
+}
+.valores h3 {
+     font-family: 'Merriweather Sans', sans-serif;
+    font-size: 15px;
+}
+.nuestrosValores {
+    color: black;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+     background-color: #8bccf5;
+    
+}
+.lineaVerticalValores {
+    background-color:#8bccf5;
+    border-color: transparent;
+    height: 2px;
+}
+.valores img {
+    width: 33%;
+}
+.nuestroEquipo {
+    color: black;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    
+}
+.equipo {
+    background-color: #E3E3E3;
+}
+.equipo img {
+    border-radius: 150px;
+    width: 70%;
+}
+.inteUno, .inteDos, .inteTres, .inteCuatro {
+    float: left;
+    text-align: center;
+    width: 33.33%;
+    padding: 10px;
+}
+.productos {
+    color: black;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    background-color: #E3E3E3;
+    margin-left: 190px;
+    margin-right: 190px;
+    
+}
+.epetLogo img {
+    width: 20%;
+    position: relative;
+    left: 40.5%;
+}
+.epetLogo  {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.epetLogo h3 {
+     font-family: 'Merriweather Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+.epetLogo h1 {
+     font-family: 'Merriweather Sans', sans-serif;
+    font-size: 27px;
+    text-align: center;
+    color: black;
+}
+
+.lineaVerticalAbajo {
+   background-color: #E3E3E3; 
+    border-bottom-style: none;
+    font-family: 'Lato', sans-serif;
+    height: 25px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 40px;
+}

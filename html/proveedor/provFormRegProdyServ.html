@@ -1,0 +1,474 @@
+<html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../../css/proveedor/provFormRegProdyServ.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/proveedor/provHeaderyFooter.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Asap:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="menu wrapper">
+    <div class="menu-izq">
+      <image src="../../imgs/iconosYLogo/logoHuellaPata.png"></image>
+    </div>
+    <div class="menu-centro">
+      <h1> e-pet </h1>
+      <div class=menuUbicacion>
+        <a href="provHome.html">Home</a>
+        <a href="provListProdyServ.html" style="color: gray">Mis Productos y Servicios</a>
+        <a href="provPedidos.html">Mis pedidos</a>
+        <a>Mi perfil</a>
+      </div>
+    </div>
+  </div>
+  <a href=""><img src="../../imgs/iconosYLogo/campana.png" class="campana"></a>
+  <a href="http://localhost:8080/ladingPageProd.html"><img src="../../imgs/iconosYLogo/flecha.png" class="miCuenta"></a>
+  <hr align="right" class="lineaVerticalAbajo" width="100%">
+  <h1 class="tituloRegistro">Crear un Producto o Servicio</h1>
+  <div class="formulario wrapper">
+    <form id="form">
+      <div class="primeraSeccion">
+        <p>Nombre del producto: <input id="nombreDelProducto" onkeyup="validacionCampoNombre()"
+            onkeypress="return soloLetras(event)" type="text" name="nombre" class="caja"></p>
+        <h5 class="warningsU" id="warningNombreProducto"></h5>
+        <!--Finalizacion del warning nombre del producto-->
+        <p>Descripción<br><textarea id="descripcion" onkeyup="validacionCampoDescripcion()" name="descripcion" rows="2"
+            cols="15"></textarea></p>
+        <!--Inicio del warning para la descripcion-->
+        <h5 class="warnings" id="warningDescripcionProducto"></h5>
+        <!--Finalizacion del warning para la descripcion-->
+      </div>
+      <div class="segundaSeccion">
+        <p>Precio: <br><input placeholder="₡" id="precio" type="text" onkeyup="validacionCampoPrecio()"
+            onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" name="precio"
+            class="caja"></p>
+        <!--Inicio del waring para el precio-->
+        <h5 class="warningsU" id="warningPrecioDelProducto"></h5>
+        <!--Finalizacion del warning para el precio del producto-->
+        <p> Especie: <br>
+          <select id="especie" name="especie" onchange="validacionSelectEspecie()" class="caja">
+            <option value="0"></option>
+            <option value="Perros">Perros</option>
+            <option value="Gatos">Gatos</option>
+          </select>
+          <!--Inicio del warning para el select de especie-->
+        <h5 class="warningsU" id="warningSeleccionDeEspecie"></h5>
+        <!--Finalizacion del warning para el select de especie-->
+        <p> Tipo: <br>
+          <select name="tipo" id="tipo" onchange="validacionSelectTipo()" class="caja">
+            <option value="0"></option>
+            <option value="Servicio">Servicio</option>
+            <option value="Producto">Producto</option>
+          </select>
+          <!--Inicio del warning para el select de tipo-->
+        <h5 class="warningsU" id="warningTipo"></h5>
+        <!--Finalizacion del warning para el select de tipo-->
+      </div>
+      <div class="terceraSeccion ">
+        <p>Categoría</p>
+        <select class="caja" name="categoriaServProd" id="categoriaServProd"
+          onchange="validacionSelectCategoria()">
+        </select>
+        <h5 class="warningsU" id="warningCategoria"></h5>
+        <label for="imagen" class="botonSubirFoto">
+          <div class="textoBoton">Subir foto de perfil</div>
+        </label> <br>
+        <input type="file" accept="image/*" id="imagen" name="imagen" value="imagen" style="display:none"
+          onchange="validacionSubirImagen()">
+        <h5 class="warnings-img" id="warning-imagen"></h5>
+        <div class="lado ladoTexto" onclick="validacionFormulario()">Terminar registro</div>
+        <h5 class="warnings" id="warningDuplicado"></h5>
+      </div>
+  </form>
+  </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="footer-content">
+
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>N</span>osotros</h1>
+        <p class="tipo">
+          e-pet es la mejor opción para comprar todo para tus mascotas. ¡Subscríbete de inmediato, muchas PYMES te
+          esperan!
+        </p>
+        <br>
+        <div class="contact">
+          <div class="tipo"><i class="fas fa-phone"></i>&nbsp;2220-0578</div>
+          <div class="tipo"><i class="fas fa-envelope"></i>&nbsp;epet@gmail.com</div>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h1><span>S</span>íguenos</h1>
+        <div class="socials">
+          <a href="#"> <img src="../../imgs/iconosYLogo/facebook.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/instagram.png"></a>
+          <a href="#"><img src="../../imgs/iconosYLogo/twitter.png"></a>
+          <a href="#"> <img src="../../imgs/iconosYLogo/youtube.png"></a>
+        </div>
+      </div>
+      <div class="footer-section contact-form">
+        <h1><span>C</span>ontáctenos</h1>
+        <form action="index.html" method="post">
+          <input type="email" name="email" class="text-input contact-input" placeholder="Correo">
+          <textarea name="message" class="text-input contact-input" placeholder="¿Cuál es su duda?"></textarea>
+          <br>
+          <button type="submit" class="btn btn-big contact-btn"><i class="fas fa-envelope"></i> Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom tipo">
+      &copy;Designed By Arcadia Group
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById("form");
+    const nombre = document.getElementById("nombreDelProducto");
+    const descripcion = document.getElementById("descripcion");
+    const precio = document.getElementById("precio");
+    const especie = document.getElementById("especie");
+    const tipo = document.getElementById("tipo");
+    const imagen = document.getElementById("imagen");
+    const categoria = document.getElementById("categoriaServProd");
+
+    /*Aqui estamos guardando sobre cada variable nuevamente de tipo consstante 
+    los id de cada parrafo colocado debajo de cada text box select etc etc*/
+
+    const advertenciaNombreProducto = document.getElementById("warningNombreProducto");
+    const advertenciaDescripcionProducto = document.getElementById("warningDescripcionProducto");
+    const advertenciaPrecioDelProducto = document.getElementById("warningPrecioDelProducto");
+    const advertenciaSeleccionDeEspecie = document.getElementById("warningSeleccionDeEspecie");
+    const advertenciaTipo = document.getElementById("warningTipo");
+    const advertenciaImagen = document.getElementById("warning-imagen");
+    const advCategoria = document.getElementById("warningCategoria");
+
+    const terminarRegistro = document.getElementById("terminarRegistro");
+    var completo = 0;
+    let imageFile;
+
+
+    function validacionFormulario() {
+      var datosProveedor = JSON.parse(localStorage.getItem('datosP'));
+
+      let respuestaFuncionNombre = validacionCampoNombre();
+      let respuestaFuncionDescripcion = validacionCampoDescripcion();
+      let respuestaFuncionPrecio = validacionCampoPrecio();
+      let respuestaFuncionEspecie = validacionSelectEspecieU();
+      let respuestaFuncionTipo = validacionSelectTipoU();
+      let respuestaFuncionImagen = validacionSubirImagen();
+      let g = validacionSelectCategoria();
+
+      if (respuestaFuncionNombre == false && respuestaFuncionDescripcion == false && respuestaFuncionPrecio == false && respuestaFuncionEspecie == false && respuestaFuncionTipo == false && respuestaFuncionImagen == true && g == false) {
+        completo = 1;
+      }
+
+      if (completo == 1) {
+
+        var datos = {
+          identificacionProveedor: datosProveedor.identificacionProveedor,
+          nombreEmpresa:datosProveedor.nombreEmpresa,
+          numeroTelEmpresa:datosProveedor.numeroTelEmpresa,
+          nombreDelProducto: document.getElementById("nombreDelProducto").value,
+          descripcion: document.getElementById("descripcion").value,
+          precio: document.getElementById("precio").value,
+          especie: document.getElementById("especie").options[especie.selectedIndex].text,
+          tipo: document.getElementById("tipo").options[tipo.selectedIndex].text,
+          provincias: datosProveedor.provincia,
+          cantones: datosProveedor.canton,
+          nombreFoto: document.getElementById("imagen").files[0].name,
+          categoria: document.getElementById("categoriaServProd").options[categoria.selectedIndex].text,
+        }
+        const formData = new FormData();
+
+        for (let key in datos) {
+          formData.append(key, datos[key]);
+        }
+        formData.append('imagen', imageFile);
+
+        fetch("http://localhost:8080/html/proveedor/provFormRegProdyServ.html/insertar", {
+          method: 'POST',
+          body: formData,
+        })
+          .then(
+            function (response) {
+              return response.json();
+            }
+          )
+      }
+      location.href="http://localhost:8080/html/proveedor/provListProdyServ.html";
+    }
+
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
+
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+
+    function validacionCampoNombre() {
+      let entrar = false
+      let warningNombreProducto = ""
+
+      if (nombre.value.length <= 0) {
+        warningNombreProducto = `Por favor digite un nombre.`
+        entrar = true
+      }
+
+      if (entrar == true) {
+        advertenciaNombreProducto.innerHTML = warningNombreProducto
+
+
+      } else {
+        advertenciaNombreProducto.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+
+    function validacionCampoDescripcion() {
+      let entrar = false
+      let warningDescripcionProducto = ""
+
+      if (descripcion.value.length <= 2) {
+        warningDescripcionProducto = `Por favor rellene la descripción. `
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaDescripcionProducto.innerHTML = warningDescripcionProducto
+      } else {
+        advertenciaDescripcionProducto.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+
+    function validacionCampoPrecio() {
+      let entrar = false
+      let warningPrecioDelProducto = ""
+
+      if (precio.value.length <= 0) {
+        warningPrecioDelProducto = `Por favor digite un precio.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaPrecioDelProducto.innerHTML = warningPrecioDelProducto
+      } else {
+        advertenciaPrecioDelProducto.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+
+    function validacionSelectEspecie() {
+      let entrar = false
+      let warningSeleccionDeEspecie = ""
+
+      if (especie.value <= 0) {
+        warningSeleccionDeEspecie = `Por favor seleccione una especie válida.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaSeleccionDeEspecie.innerHTML = warningSeleccionDeEspecie
+      } else {
+        advertenciaSeleccionDeEspecie.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        cargarCategorias();
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+    function validacionSelectEspecieU() {
+      let entrar = false
+      let warningSeleccionDeEspecie = ""
+
+      if (especie.value <= 0) {
+        warningSeleccionDeEspecie = `Por favor seleccione una especie válida.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaSeleccionDeEspecie.innerHTML = warningSeleccionDeEspecie
+      } else {
+        advertenciaSeleccionDeEspecie.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+
+    function validacionSelectTipo() {
+      let entrar = false
+      let warningTipo = ""
+
+      if (tipo.value <= 0) {
+        warningTipo = `Por favor seleccione un tipo válido.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaTipo.innerHTML = warningTipo
+      } else {
+        advertenciaTipo.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        cargarCategorias();
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+    function validacionSelectTipoU() {
+      let entrar = false
+      let warningTipo = ""
+
+      if (tipo.value <= 0) {
+        warningTipo = `Por favor seleccione un tipo válido.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advertenciaTipo.innerHTML = warningTipo
+      } else {
+        advertenciaTipo.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+
+    function validacionSelectCategoria() {
+      let entrar = false
+      let warningTipo = ""
+
+      if (categoria.value == 0) {
+        warningTipo = `Por favor seleccione una categoría.`
+        entrar = true
+      }
+
+      if (entrar) {
+        advCategoria.innerHTML = warningTipo
+      } else {
+        advCategoria.innerHTML = ""
+      }
+
+      if (entrar == false) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+    function validacionSubirImagen() {
+      let warningImagen = ""
+
+      console.log(this.files);
+      if (this.files && this.files[0]) {  
+        imageFile = this.files[0];
+      }
+      if (imagen.value == "") {
+        warningImagen = "Por favor seleccione una imagen."
+        advertenciaImagen.innerHTML = warningImagen
+        return false;
+      } else {
+        advertenciaImagen.innerHTML = ""
+        return true;
+      }
+        
+    }
+
+    function validacionSubirImagen() {
+      let warningImagen = ""
+
+      console.log(this.files);
+      if (this.files && this.files[0]) {  
+        imageFile = this.files[0];
+      }
+      if (imagen.value == "") {
+        warningImagen = "Por favor seleccione una imagen."
+        advertenciaImagen.innerHTML = warningImagen
+        return false;
+      } else {
+        advertenciaImagen.innerHTML = ""
+        return true;
+      }
+        
+    }
+document.getElementById("imagen").addEventListener("change",validacionSubirImagen)
+
+    function cargarCategorias() {
+      
+      fetch("http://localhost:8080/categorias")
+        .then(
+          function (response) {
+            console.log(response);
+            return response.json();
+          }
+        )
+        .then(
+          function (json) {
+            document.getElementById("categoriaServProd").innerHTML = '';
+            var linea = "<option value='" + 0 + "''>" + "" + "</option>"; document.getElementById("categoriaServProd").insertAdjacentHTML("beforeend", linea);
+            for (var cont = 0; json.length > cont; cont++) {
+              if (json[cont].animal == especie.value && json[cont].tipo == tipo.value) {
+                var linea = "<option value='" + (cont + 1) + "''>" + json[cont].nombre + "</option>"; document.getElementById("categoriaServProd").insertAdjacentHTML("beforeend", linea);
+              }
+            }
+          }
+        )
+    }
+  </script>
+</body>
+
+</html>
